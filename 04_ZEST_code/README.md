@@ -1,9 +1,9 @@
-#This is the main code for our ZEST Model 
+# This is the main code for our ZEST Model 
 
-#Input
+# Input
 The input of the model is a sequence of 200 packets, each packet with 8 features as we mentioned in our paper. 
 
-#File description
+# File description
 There are two jupyter notebook files: 
 
 ## ZEST_SANE.ipynb
