@@ -3,7 +3,9 @@ This is the main code for our ZEST Model
 
 The input of the model is a sequence of 200 packets, each packet with 8 features as we mentioned in our paper. 
 
-There are two jupyter notebook files, one name ""
+There are two jupyter notebook files: 
+one named "ZEST_SANE" 
+1. It is mainly build for self-attention based feature extractor
 
 
 
