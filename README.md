@@ -1,14 +1,13 @@
 # ZEST_source_code
-This is the source code of our paper 
+
+This is the source code of our paper: ZEST: A Zero-Shot Learning Framework for Unseen IoT Device Classification
+
+## Convert_pcap_to_csv
 
 
+## Create_device_sequence
 
-## convert_pcap_to_csv
-
-
-## create_device_sequence
-
-## create windows
+## Create windows
 
 
 
