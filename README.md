@@ -3,7 +3,7 @@
 This is the source code of our paper: ZEST: A Zero-Shot Learning Framework for Unseen IoT Device Classification
 
 ## Convert_pcap_to_csv
-## The goal
+### The goal
 
 On the [UNSW website](https://iotanalytics.unsw.edu.au/iottraces.html), IoT traffic
 data is available in two formats:
@@ -13,7 +13,7 @@ data is available in two formats:
 Since we want lots of CSV data, we convert the large PCAP dataset to CSV. For
 this purpose, we use the bash script here.
 
-## Usage
+### Usage
 
 * Download PCAP data from UNSW website, put data in `../../pcap_unsw` folder
 * Create the destination folder: `../../csv_from_pcap/`
@@ -22,7 +22,7 @@ this purpose, we use the bash script here.
 
 Note: `tshark` has to be in the path.
 
-## Converter logic
+### Converter logic
 
 The converter does the following filtering and extraction:
 * Only keep UDP and TCP packets
@@ -47,7 +47,22 @@ Conversion logic:
 
 ## Create_device_sequence
 
+Extract traffic features from raw packets.
 
+- Input: raw packet data in CSV format
+- Output: packet sequences per device in CSV format. For each packet, we extract the following features:
+  - Packet size
+  - Time since last packet
+  - Direction (in/out)
+  - Protocol (transport layer - UDP/TCP)
+  - Source port (-1 if random, 1 if 1...1024)
+  - Destination port (-1 if random, 1 if 1...1024)
+  - Source IP address (internal/external)
+  - Destination IP address (internal/external)
+
+### How to generate sequences
+
+Run the jupyter notebook `from_csv_to_sequence.ipynb`. In particular, the function `create_features_from_csv()` generates the sequences.
 
 
 
