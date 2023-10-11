@@ -91,6 +91,9 @@ The dimensions of the numpy arrays are as follows:
 - `y`: WINDOWS x 1 x CLASSES. This is a long list of labels, in one-hot encoding format.
 
 ## ZEST Code
+
+This is the main code for our ZEST framework
+
 1. The data is splited into **seen** devices and **unseen** devices. 
 2. Train a supervised self-attention based model for only **seen** devices. 
 3. Use the pretrained model to extract attributes for both **seen** and **unseen** devices.
