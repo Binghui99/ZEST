@@ -90,7 +90,7 @@ The dimensions of the numpy arrays are as follows:
 - `x`: WINDOWS x WINDOW_LENGTH x FEATURES. This is a long list of windows, where each window consists of consecutive packets for one IoT device.
 - `y`: WINDOWS x 1 x CLASSES. This is a long list of labels, in one-hot encoding format.
 
-## ZEST Code
+# ZEST Code
 
 This is the main code for our ZEST framework
 
@@ -104,7 +104,7 @@ This is the main code for our ZEST framework
 
 
 
-# Supervised learning: IoT device classification
+## Supervised learning: IoT device classification
 
 Train a Bi-LSTM on the packet windows. Learn to classify windows into IoT classes.
 
