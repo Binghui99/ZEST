@@ -90,6 +90,19 @@ The dimensions of the numpy arrays are as follows:
 - `x`: WINDOWS x WINDOW_LENGTH x FEATURES. This is a long list of windows, where each window consists of consecutive packets for one IoT device.
 - `y`: WINDOWS x 1 x CLASSES. This is a long list of labels, in one-hot encoding format.
 
+
+## Supervised learning: IoT device classification
+
+Train a Bi-LSTM on the packet windows. Learn to classify windows into IoT classes.
+
+### Usage
+
+- Make sure you have previously generated the window dataset
+- The training is implemented in `train_from_npz.ipynb`
+- The model checkpoints can be stored in a configurable folder
+- In Google Colab, make sure you activate a GPU and high RAM, using the "Runtime" -> "Change runtime type" menu
+
+
 # ZEST Code
 
 This is the main code for our ZEST framework
@@ -103,14 +116,47 @@ This is the main code for our ZEST framework
 
 
 
+## Baselines 
 
-## Supervised learning: IoT device classification
+There are 4 baselines, all of them are based on the Bi-LSTM model we mentioned above. 
+But VAE-K use VAE to reduce the dimension
+They utilize different solutions to do the classification. 
 
-Train a Bi-LSTM on the packet windows. Learn to classify windows into IoT classes.
 
-### Usage
+#### VAE-K
+-It employs VAE to extract features and applys k-means to perform clustering subsequently.
 
-- Make sure you have previously generated the window dataset
-- The training is implemented in `train_from_npz.ipynb`
-- The model checkpoints can be stored in a configurable folder
-- In Google Colab, make sure you activate a GPU and high RAM, using the "Runtime" -> "Change runtime type" menu
+-You can cite by Bibtex: 
+@inproceedings{ICC_unsuper,
+  author       = {Zhang {\it et al.}, Shize},
+  title        = {{Unsupervised IoT Fingerprinting Method via Variational Auto-encoder
+                  and K-means}},
+  booktitle    = {{IEEE} {ICC} },
+  year         = {2021},
+}
+
+
+#### SeqCR
+-It ultilizes BiLSTM to extract features, and uses k-means to do clustering 
+
+#### SeqCS
+
+-It ultilizes BiLSTM to extract features, and uses seeded k-means to do clustering 
+
+#### DEFT
+
+-It ultilizes BiLSTM to extract features, and uses seeded k-means to do clustering. Then use Random forest to enhance the performance. 
+
+
+-You can cite by Bibtex: 
+
+@ARTICLE{DEFT-2019, 
+author={Thangavelu {\it et al.}, Vijayanand}, 
+journal={IEEE Internet of Things Journal}, 
+title={{DEFT: A Distributed IoT Fingerprinting Technique}}, 
+year={2019}, 
+volume={6}, 
+number={1}, 
+pages={940-952},
+}
+
