@@ -2,8 +2,9 @@
 
 This is the source code of our paper: ZEST: Attention-based Zero-Shot Learning for Unseen IoT Device Classification.
 [https://arxiv.org/abs/2310.08036](https://arxiv.org/abs/2310.08036)
+## This paper is accepted by IEEE NOMS 2024
 
-# This paper is accepted by IEEE NOMS 2024
+
 
 ## Convert_pcap_to_csv
 ### The goal
